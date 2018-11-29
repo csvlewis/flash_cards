@@ -4,7 +4,9 @@ require './lib/turn'
 require './lib/deck'
 
 class Round
-  attr_reader :turns
+  attr_reader :turns,
+              :deck
+
   def initialize(deck)
   @deck = deck
   @turns = []
@@ -27,8 +29,8 @@ class Round
     if turn.correct?
       correct += 1
       return correct
-      end
     end
+  end
   end
 
   def number_correct_by_category(category)
@@ -54,14 +56,21 @@ class Round
     percent = (correct / total) * 100.0
     return percent
   end
+
+  def percent_correct_by_category(category)
+    correct = 0.0
+    total = 0.0
+    @turns.each do |turn|
+      if turn.card.category == category
+        total += 1
+      end
+    end
+    @turns.each do |turn|
+      if turn.card.category == category && turn.correct?
+        correct += 1
+      end
+    end
+    percent = (correct / total) * 100.0
+    return percent
+  end
 end
-
-
-card_1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
-card_2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
-card_3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
-
-cards = [card_1, card_2, card_3]
-deck = Deck.new(cards)
-round = Round.new(deck)
-binding.pry

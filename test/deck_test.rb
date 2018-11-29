@@ -5,3 +5,5 @@ test_contains_cards
 test_count
 
 test_categories
+
+test_no_categories
