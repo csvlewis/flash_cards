@@ -8,8 +8,8 @@ class Round
               :deck
 
   def initialize(deck)
-  @deck = deck
-  @turns = []
+    @deck = deck
+    @turns = []
   end
 
   def current_card
@@ -72,6 +72,28 @@ class Round
     end
     percent = (correct / total) * 100.0
     return percent
+  end
+
+  def start
+    starting_cards = @deck.count
+    puts "Welcome! You're playing with #{starting_cards} cards."
+    puts "-" * 40
+    round = 1
+    past_turns = []
+    while @deck.cards.count > 0
+      puts "This is card number #{round} out of #{starting_cards}"
+      puts "Question: #{@deck.cards[0].question}"
+      response = gets.chomp.to_s.downcase
+      take_turn(response).feedback
+      turn = Turn.new(response, @deck.cards[0])
+      past_turns << turn
+      round += 1
+    end
+    puts '****** Game over! ******'
+    puts "You had #{number_correct} correct guesses out of #{starting_cards} for a total score of #{percent_correct}%."
+    puts "TV and movies - #{percent_correct_by_category(:TV_and_movies)}% correct"
+    puts "Zoology - #{percent_correct_by_category(:Zoology)}% correct"
+    puts "Geography - #{percent_correct_by_category(:Geography)}% correct"
   end
 end
 #

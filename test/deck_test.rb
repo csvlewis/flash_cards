@@ -21,7 +21,7 @@ class TurnTest < Minitest::Test
     cards = [card_1, card_2, card_3]
     deck = Deck.new(cards)
 
-    assert_instance_of Card, deck.cards[0] && deck.cards[1] && deck.cards[2]
+    assert_equal cards, deck.cards[0] && deck.cards[1] && deck.cards[2]
   end
 
   def test_count

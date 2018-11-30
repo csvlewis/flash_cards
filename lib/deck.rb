@@ -1,11 +1,10 @@
 require 'pry'
-require './lib/card'
 
 class Deck
   attr_reader :cards
   def initialize(cards)
     @cards = cards
-    @card_category = []
+
   end
 
   def count
@@ -13,12 +12,13 @@ class Deck
   end
 
   def cards_in_category(category)
-    @card_category.clear
+    card_category = []
     cards.each do |card|
       if card.category == category
-        @card_category << card
+        card_category << card
       end
     end
-    return @card_category
+    return card_category
   end
 end
+ #find_all
