@@ -12,9 +12,9 @@ class Turn
 
   def feedback
     if correct?
-      puts 'Correct!'
+      p 'Correct!'
     else
-      puts 'Incorrect.'
+      p 'Incorrect.'
     end
   end
 
