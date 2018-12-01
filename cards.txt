@@ -1,0 +1,10 @@
+What is the average airspeed velocity of an unladen swallow in meters per second?,11,Zoology
+What is the name of the coffe shop from the sitcom 'Friends'?,central perk,TV_and_movies
+What is the largest country located entirely in Europe?,ukraine,Geography
+What is the most populous city in the world?,tokyo,Geography
+Which African country has the most pyramids?,sudan,Geography
+Which animal has the highest blood pressure?,giraffe,Zoology
+What is the only mammal capable of flight?,bat,Zoology
+In which year were the Academy Awards first presented?,1929,TV_and_movies
+What was the first feature film to have a sequel?,king kong,TV_and_movies
+Which Oscar award-winning film was released with an X rating?,midnight cowboy,TV_and_movies
