@@ -1,14 +1,13 @@
 require 'minitest/autorun'
-require 'minitest/pride'
 require './lib/deck'
 require './lib/card'
 
 class TurnTest < Minitest::Test
 
   def test_it_exists
-    card_1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
-    card_2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
-    card_3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
+    card_1 = Card.new('What is the capital of Alaska?', 'Juneau', :Geography)
+    card_2 = Card.new('The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?', 'Mars', :STEM)
+    card_3 = Card.new('Describe in words the exact direction that is 697.5° clockwise from due north?', 'North north west', :STEM)
     cards = [card_1, card_2, card_3]
     deck = Deck.new(cards)
 
@@ -16,9 +15,9 @@ class TurnTest < Minitest::Test
   end
 
   def test_contains_cards
-    card_1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
-    card_2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
-    card_3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
+    card_1 = Card.new('What is the capital of Alaska?', 'Juneau', :Geography)
+    card_2 = Card.new('The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?', 'Mars', :STEM)
+    card_3 = Card.new('Describe in words the exact direction that is 697.5° clockwise from due north?', 'North north west', :STEM)
     cards = [card_1, card_2, card_3]
     deck = Deck.new(cards)
 
@@ -26,9 +25,9 @@ class TurnTest < Minitest::Test
   end
 
   def test_count
-    card_1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
-    card_2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
-    card_3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
+    card_1 = Card.new('What is the capital of Alaska?', 'Juneau', :Geography)
+    card_2 = Card.new('The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?', 'Mars', :STEM)
+    card_3 = Card.new('Describe in words the exact direction that is 697.5° clockwise from due north?', 'North north west', :STEM)
     cards = [card_1, card_2, card_3]
     deck = Deck.new(cards)
 
@@ -36,9 +35,9 @@ class TurnTest < Minitest::Test
   end
 
   def test_categories
-    card_1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
-    card_2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
-    card_3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
+    card_1 = Card.new('What is the capital of Alaska?', 'Juneau', :Geography)
+    card_2 = Card.new('The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?', 'Mars', :STEM)
+    card_3 = Card.new('Describe in words the exact direction that is 697.5° clockwise from due north?', 'North north west', :STEM)
     cards = [card_1, card_2, card_3]
     deck = Deck.new(cards)
 
@@ -46,12 +45,12 @@ class TurnTest < Minitest::Test
   end
 
   def test_no_categories
-    card_1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
-    card_2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM)
-    card_3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
+    card_1 = Card.new('What is the capital of Alaska?', 'Juneau', :Geography)
+    card_2 = Card.new('The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?', 'Mars', :STEM)
+    card_3 = Card.new('Describe in words the exact direction that is 697.5° clockwise from due north?', 'North north west', :STEM)
     cards = [card_1, card_2, card_3]
     deck = Deck.new(cards)
 
-    assert_equal [], deck.cards_in_category("Pop Culture")
+    assert_equal [], deck.cards_in_category('Pop Culture')
   end
 end
