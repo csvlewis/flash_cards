@@ -1,9 +1,6 @@
-require 'pry'
-
 class Round
-  attr_reader :turns,
-              :deck
-
+  attr_reader :deck,
+              :turns
   def initialize(deck)
     @deck = deck
     @turns = []
@@ -21,60 +18,42 @@ class Round
   end
 
   def number_correct
-    correct = 0
-    @turns.each do |turn|
-    if turn.correct?
-      correct += 1
+    correct = @turns.find_all do |turn|
+      turn.correct?
     end
-    end
-      return correct
+    correct.count
   end
 
   def number_correct_by_category(category)
-    correct = 0
-  @turns.each do |turn|
-    if turn.card.category == category
-    if turn.correct?
-      correct += 1
+    turn_category = @turns.find_all do |turn|
+      turn.card.category == category
     end
-    end
-  end
-    return correct
+    turn_category.count
   end
 
   def percent_correct
-    correct = 0.0
     total = @turns.count
-    @turns.each do |turn|
-      if turn.correct?
-        correct += 1
-      end
+    correct = @turns.find_all do |turn|
+      turn.correct?
     end
-    percent = (correct / total) * 100.0
-    return percent
+    (correct.count.to_f / total.to_f) * 100.0
   end
 
   def percent_correct_by_category(category)
-    correct = 0.0
-    total = 0.0
-    @turns.each do |turn|
-      if turn.card.category == category
-        total += 1
-      end
+    total = @turns.find_all do |turn|
+      turn.card.category == category
     end
-    @turns.each do |turn|
-      if turn.card.category == category && turn.correct?
-        correct += 1
-      end
+    correct = @turns.find_all do |turn|
+      turn.card.category == category && turn.correct?
     end
-    percent = (correct / total) * 100.0
+    percent = (correct.count.to_f / total.count.to_f) * 100.0
     return percent
   end
 
   def start
     starting_cards = @deck.count
     puts "Welcome! You're playing with #{starting_cards} cards."
-    puts "-" * 40
+    puts '-' * 40
     round = 1
     past_turns = []
     while @deck.cards.count > 0

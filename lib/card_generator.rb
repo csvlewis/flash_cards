@@ -1,5 +1,4 @@
 require './lib/card'
-require 'pry'
 
 class CardGenerator
   attr_reader :cards

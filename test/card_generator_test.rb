@@ -4,7 +4,6 @@ require './lib/deck'
 require './lib/round'
 
 class CardGeneratorTest < Minitest::Test
-
   def test_it_exists
     cards = CardGenerator.new('cards.txt')
 
@@ -23,7 +22,7 @@ class CardGeneratorTest < Minitest::Test
     deck = Deck.new(cards.cards)
 
     assert_instance_of Card, deck.cards[0]
-    assert_equal "central perk", deck.cards[1].answer
+    assert_equal 'central perk', deck.cards[1].answer
   end
 
   def test_it_creates_a_round
